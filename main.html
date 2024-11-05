@@ -10,6 +10,24 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
+			// Parse array elements as integers
+			arr = arr.map(Number);
+			
+			// If array has fewer than 2 unique elements, return -Infinity
+			if (arr.length < 2) return -Infinity;
+
+			let first = -Infinity, second = -Infinity;
+
+			for (let num of arr) {
+				if (num > first) {
+					second = first;
+					first = num;
+				} else if (num > second && num < first) {
+					second = num;
+				}
+			}
+
+			return second === -Infinity ? -Infinity : second;
 			
 		}
 
