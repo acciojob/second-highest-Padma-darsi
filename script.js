@@ -1,18 +1,22 @@
 //your JS code here. If required.
 function secondHighest(arr) {
-    // Check if the array is empty, has only one element, or all elements are the same
+    // If array has fewer than 2 elements, return -Infinity
     if (arr.length < 2) return -Infinity;
 
+    // Initialize first and second highest as -Infinity
     let first = -Infinity, second = -Infinity;
 
     for (let num of arr) {
         if (num > first) {
+            // Update second before first
             second = first;
             first = num;
         } else if (num > second && num < first) {
+            // Update second if it's between first and second
             second = num;
         }
     }
 
+    // If no second-highest value was found, return -Infinity
     return second === -Infinity ? -Infinity : second;
 }
