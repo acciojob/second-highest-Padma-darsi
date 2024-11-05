@@ -17,6 +17,6 @@ function secondHighest(arr) {
         }
     }
 
-    // If no second-highest value was found, return -Infinity
+    // If second-highest is still -Infinity, it means all elements are the same
     return second === -Infinity ? -Infinity : second;
 }
