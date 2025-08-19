@@ -9,25 +9,26 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-		 if (n < 2) {
-    
-    return "-Infinity";
-  }
+		   function secondHighest(arr) {
+      if (arr.length < 2) {
+        return -Infinity;
+      }
 
-  let first = -Infinity;
-  let second = -Infinity;
+      let first = -Infinity;
+      let second = -Infinity;
 
-  for (let i = 0; i < n; i++) {
-    if (arr[i] > first) {
-      second = first;
-      first = arr[i];
-    } else if (arr[i] > second && arr[i] !== first) {
-      second = arr[i];
-    }
-  }
+      for (let i = 0; i < arr.length; i++) {
+        let num = arr[i];
+        if (num > first) {
+          second = first;
+          first = num;
+        } else if (num > second && num !== first) {
+          second = num;
+        }
+      }
 
-  console.log(second);
-}
+      // If all elements are the same, second will stay -Infinity
+      return second;
 		}
 
 		function Main() {
