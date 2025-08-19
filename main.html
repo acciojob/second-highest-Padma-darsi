@@ -9,24 +9,25 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
-			if(arr=""||arr.length=1)
-			{
-				return "-Infinity";
-			}else
-			{
-				let sortedarr=arr.sort((a,b)=>a-b);
-				let highest=sortedarr.length-1;
-				for(let i=sortedarr.length-2;i>=0;i--)
-					{
-						if(sortedarr[i]<highest)
-						{
-							return sortedarr[i];
-							break;
-						}
-					}
-			}
-			return "-Infinity";
+		 if (n < 2) {
+    
+    return "-Infinity";
+  }
+
+  let first = -Infinity;
+  let second = -Infinity;
+
+  for (let i = 0; i < n; i++) {
+    if (arr[i] > first) {
+      second = first;
+      first = arr[i];
+    } else if (arr[i] > second && arr[i] !== first) {
+      second = arr[i];
+    }
+  }
+
+  console.log(second);
+}
 		}
 
 		function Main() {
